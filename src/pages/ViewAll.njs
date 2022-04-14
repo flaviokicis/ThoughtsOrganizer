@@ -14,9 +14,14 @@ class ViewAll extends Nullstack {
   }
 
   // Load
-  async initiate() {
+  async initiate({ params }) {
     this.allThoughts = await ViewAll.loadAll();
     this.showThoughts = this.allThoughts.slice(0);
+    if (params.upcoming) this.orderBy = "upcoming";
+  }
+
+  async hydrate() {
+    this.order({ orderBy: this.orderBy });
   }
 
   order({ orderBy }) {
