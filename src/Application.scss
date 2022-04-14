@@ -12,9 +12,18 @@
 }
 
 body {
+  height: 100vh;
   background-color: #323031;
   color: #fff;
   font-family: "Kurale", serif;
+
+  & main {
+    height: 100%;
+  }
+}
+
+#application {
+  height: 100%;
 }
 
 article {

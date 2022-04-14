@@ -5,7 +5,11 @@ const Input = function ({ title, type, onchange, value }) {
   return (
     <div class="input-wrapper">
       <p>{title}</p>
-      <input type={type} onchange={onchange} value={value} />
+      {value !== undefined ? (
+        <input type={type} onchange={onchange} value={value} />
+      ) : (
+        <input type={type} onchange={onchange} />
+      )}
     </div>
   );
 };

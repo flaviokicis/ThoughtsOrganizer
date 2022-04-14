@@ -6,6 +6,7 @@ const schema = mongoose.Schema(
       type: String,
       required: true,
     },
+    insight: String,
     theme: String,
     due: Date,
   },

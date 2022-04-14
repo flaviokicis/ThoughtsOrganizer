@@ -22,11 +22,80 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    & textarea {
+      padding: 2px;
+      width: 100%;
+      height: 25vh;
+      outline: none;
+      border: 1px solid var(--primary-red);
+      border-radius: 1px;
+      background: transparent;
+      color: white;
+      transition: all 80ms ease-in-out;
+
+      &:focus {
+        outline: 1px solid white;
+      }
+    }
   }
 }
 
 .thought-header {
+  word-break: break-all;
+  max-width: 60vw;
   display: flex;
   justify-content: center;
-  font-size: 50px;
+  font-size: 40px;
+}
+
+.confirm-delete {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgb(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .delete-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vw;
+    background-color: var(--secondary-black);
+    border: 1px solid var(--primary-red);
+    gap: 60px;
+
+    & .buttons-box {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}
+
+.buttons-box-big button {
+  margin: 0 10px;
+  font-size: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.view-icon {
+  color: var(--primary-red);
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    margin: 3px 0 -25px 0;
+  }
 }

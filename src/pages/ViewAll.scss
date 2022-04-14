@@ -35,3 +35,30 @@
     margin: 3px 0 -25px 0;
   }
 }
+
+.sort-dropdown {
+  width: 30%;
+  height: 2rem;
+  background-color: transparent;
+  border: 1px solid var(--primary-red);
+  color: white;
+
+  & option {
+    background-color: var(--secondary-black);
+  }
+}
+
+.home-icon {
+  color: var(--primary-red);
+  position: absolute;
+  left: 0px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    margin: 3px 0 -25px 0;
+  }
+}

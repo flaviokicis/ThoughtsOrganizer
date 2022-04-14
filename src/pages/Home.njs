@@ -20,7 +20,7 @@ class Home extends Nullstack {
           />
           <Sidebar.NavigateButton
             title={"Upcoming thoughts"}
-            link="upcoming"
+            link="all?upcoming=true"
             emoji="⌛"
           />
         </aside>

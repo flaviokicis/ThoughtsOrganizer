@@ -21,6 +21,11 @@ class Application extends Nullstack {
           href="https://fonts.googleapis.com/css2?family=Kurale&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
       </head>
     );
   }

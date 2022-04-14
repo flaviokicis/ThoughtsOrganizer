@@ -4,6 +4,7 @@ import Form from "../components/Form";
 import moment from "moment";
 import Sidebar from "../components/Sidebar";
 import ThoughtManager from "../database/ThoughtManager";
+import Notifications from "../utils/notifications";
 
 class Create extends Nullstack {
   title = "";
@@ -14,6 +15,11 @@ class Create extends Nullstack {
 
   // Client calls Server
   saveThought = () => {
+    if (!this.title) {
+      Notifications.showError("Title cannot be empty.");
+      return;
+    }
+    Notifications.showSuccess("Thought successfully created!");
     Create.saveNewThought({
       title: this.title,
       theme: this.theme,
@@ -54,12 +60,14 @@ class Create extends Nullstack {
           <Form.Input title="Theme" type="text" onchange={this.setTheme} />
           <Form.Input title="Due date" type="date" onchange={this.setDate} />
         </main>
-        <Form.Button
-          text="Add"
-          onclick={() => {
-            this.saveThought();
-          }}
-        />
+        <a href="/all">
+          <Form.Button
+            text="Add"
+            onclick={() => {
+              this.saveThought();
+            }}
+          />
+        </a>
         <p class="subtext">What is going on in your beautiful mind?</p>
         <div class="view-icon">
           <p>See all thoughts</p>
