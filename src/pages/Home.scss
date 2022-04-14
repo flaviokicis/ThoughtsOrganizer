@@ -52,6 +52,11 @@ footer {
   margin-top: auto;
   margin-bottom: 10px;
   text-align: center;
+
+  & span {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -73,9 +78,4 @@ img {
   header {
     flex-wrap: wrap;
   }
-}
-
-footer span {
-  text-decoration: underline;
-  font-weight: bold;
 }

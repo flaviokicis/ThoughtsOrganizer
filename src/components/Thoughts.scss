@@ -1,0 +1,28 @@
+.thought-box {
+  background-color: transparent;
+  width: 180px;
+  height: 200px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 60ms ease-in-out;
+  gap: 50px;
+
+  &:hover {
+    border: 2px solid var(--primary-red);
+  }
+
+  & .thought-highlight {
+    color: var(--primary-red);
+  }
+
+  & > p {
+    flex: 1 0 0;
+  }
+
+  & > p:first-child {
+    flex: 2 1 0;
+  }
+}

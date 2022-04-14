@@ -2,7 +2,8 @@ import Nullstack from "nullstack";
 import "./Create.scss";
 import Form from "../components/Form";
 import moment from "moment";
-import ThoughtModel from "../database/models/ThoughtModel";
+import Sidebar from "../components/Sidebar";
+import ThoughtManager from "../database/ThoughtManager";
 
 class Create extends Nullstack {
   title = "";
@@ -11,8 +12,8 @@ class Create extends Nullstack {
 
   dateValue = "";
 
+  // Client calls Server
   saveThought = () => {
-    console.log(this.dateValue);
     Create.saveNewThought({
       title: this.title,
       theme: this.theme,
@@ -32,20 +33,19 @@ class Create extends Nullstack {
     this.dateValue = event.target.value;
   };
 
-  static async saveNewThought({ title, theme, date }) {
-    let due;
+  // Add thought to Database
+  static async saveNewThought({ title, theme, date, environment }) {
     const momentObject = moment(date, "YYYY-MM-DD");
 
-    console.log(
-      await ThoughtModel.create({
-        title,
-        theme,
-        ...(momentObject.isValid() && { due: momentObject.valueOf() }),
-      })
+    ThoughtManager.createNewThought(
+      title,
+      theme,
+      momentObject,
+      environment.development
     );
   }
 
-  render({ instances }) {
+  render() {
     return (
       <article class="create-container">
         <header class="default-header">New Thought</header>
@@ -61,6 +61,14 @@ class Create extends Nullstack {
           }}
         />
         <p class="subtext">What is going on in your beautiful mind?</p>
+        <div class="view-icon">
+          <p>See all thoughts</p>
+          <Sidebar.NavigateButton
+            title={"See all thoughts"}
+            link="all"
+            emoji="👀"
+          />
+        </div>
       </article>
     );
   }

@@ -1,11 +1,11 @@
 import Nullstack from "nullstack";
 import "./Form.scss";
 
-const Input = function ({ title, type, onchange }) {
+const Input = function ({ title, type, onchange, value }) {
   return (
     <div class="input-wrapper">
       <p>{title}</p>
-      <input type={type} onchange={onchange} />
+      <input type={type} onchange={onchange} value={value} />
     </div>
   );
 };

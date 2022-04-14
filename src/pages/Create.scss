@@ -13,16 +13,31 @@
   width: 40vw;
   flex-wrap: wrap;
   gap: 10px;
-}
 
-.form-wrapper > div {
-  flex: 1 0 40%;
-}
+  & > div {
+    flex: 1 0 40%;
+  }
 
-.form-wrapper > div:first-child {
-  flex: 0 1 100%;
+  & > div:first-child {
+    flex: 0 1 100%;
+  }
 }
 
 .subtext {
   font-size: 40px;
+}
+
+.view-icon {
+  color: var(--primary-red);
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    margin: 3px 0 -25px 0;
+  }
 }

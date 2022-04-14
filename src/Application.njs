@@ -1,7 +1,9 @@
 import Nullstack from "nullstack";
 import "./Application.scss";
 import Create from "./pages/Create.njs";
+import ExactThought from "./pages/ExactThought.njs";
 import Home from "./pages/Home";
+import ViewAll from "./pages/ViewAll.njs";
 
 class Application extends Nullstack {
   prepare({ page }) {
@@ -29,6 +31,8 @@ class Application extends Nullstack {
         <Head />
         <Home route="/" />
         <Create route="/create" />
+        <ViewAll route="/all" />
+        <ExactThought route="/thought/:id" />
       </main>
     );
   }

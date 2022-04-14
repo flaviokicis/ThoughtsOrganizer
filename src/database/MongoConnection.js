@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
+import Logger from "../utils/logger";
 
 export async function connectToDatabase(url) {
   try {
-    return await mongoose.connect(url);
+    const connection = await mongoose.connect(url);
+    Logger.log("info", "✅ Successfully connected to Database!");
+    return connection;
   } catch (error) {
-    console.log(
-      "Error while connecting to MongoDB.\n Please, try double-checking URL connection string." +
+    Logger.log(
+      "error",
+      "❌ Error while connecting to MongoDB.\n Please, try double-checking URL connection string." +
         error
     );
   }
