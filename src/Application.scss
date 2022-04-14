@@ -1,3 +1,7 @@
+:root {
+  --primary-red: #db3a34;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,12 +11,21 @@
 }
 
 body {
-  background-color: #2d3748;
+  background-color: #323031;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Kurale", serif;
 }
 
-a {
-  color: #ddbc72;
-  margin-left: .3em;
+article {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  color: var(--primary-red);
+}
+
+a:link,
+a:visited {
+  all: unset;
 }

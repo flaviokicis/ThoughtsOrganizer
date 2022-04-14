@@ -1,23 +1,26 @@
-import Nullstack from 'nullstack';
-import './Application.scss';
-import Home from './Home';
+import Nullstack from "nullstack";
+import "./Application.scss";
+import Create from "./pages/Create.njs";
+import Home from "./pages/Home";
 
 class Application extends Nullstack {
-
   prepare({ page }) {
-    page.locale = 'en-US';
+    page.title = `Thoughts Organizer`;
+    page.description = `Made using Nullstack :)`;
+    page.locale = "en-US";
   }
 
   renderHead() {
     return (
       <head>
-        <link 
-          href="https://fonts.gstatic.com" rel="preconnect" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto&display=swap"
-          rel="stylesheet" />
-      </head> 
-    )
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kurale&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+    );
   }
 
   render() {
@@ -25,10 +28,10 @@ class Application extends Nullstack {
       <main>
         <Head />
         <Home route="/" />
+        <Create route="/create" />
       </main>
-    )
+    );
   }
-
 }
 
 export default Application;

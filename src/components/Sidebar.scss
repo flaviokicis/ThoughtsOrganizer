@@ -1,0 +1,15 @@
+.sidebar-button {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 62px;
+  width: 62px;
+  border-radius: 10px;
+  margin: 4vh;
+}
+
+.sidebar-button:hover {
+  border: 2px solid var(--primary-red);
+}

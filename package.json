@@ -5,10 +5,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@dotburo/select-input": "^1.3.2",
+    "moment": "^2.29.2",
     "nullstack": "~0.14.0"
   },
   "scripts": {
     "start": "npx nullstack start",
     "build": "npx nullstack build --mode=ssr"
+  },
+  "dependencies": {
+    "mongoose": "^6.2.11",
+    "toastify-js": "^1.11.2"
   }
 }
