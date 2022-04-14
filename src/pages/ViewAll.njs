@@ -14,7 +14,7 @@ class ViewAll extends Nullstack {
   }
 
   // Load
-  async hydrate() {
+  async initiate() {
     this.allThoughts = await ViewAll.loadAll();
     this.showThoughts = this.allThoughts.slice(0);
   }
@@ -67,7 +67,7 @@ class ViewAll extends Nullstack {
         </select>
 
         <main>
-          {self.hydrated ? (
+          {this.showThoughts !== undefined ? (
             this.showThoughts.length !== 0 ? (
               this.showThoughts.map((thought) => {
                 return (
